@@ -1,0 +1,4 @@
+enum PasswordTypeEnum {
+  pin,
+  standard
+}
