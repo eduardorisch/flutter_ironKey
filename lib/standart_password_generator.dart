@@ -12,7 +12,7 @@ StandardPasswordGenerator({this.includeUppercase = true,
  this.includeSymbols = true,
  });
 @override
-String generate() {
+String generate(int length) {
  final buffer = StringBuffer();
  if (includeUppercase) buffer.write('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
  if (includeLowercase) buffer.write('abcdefghijklmnopqrstuvwxyz');
@@ -22,7 +22,7 @@ String generate() {
  if (chars.isEmpty) return '';
  final random = Random();
  return List.generate(
- 12,
+ length,
  (_) => chars[random.nextInt(chars.length)],
  ).join();
  }

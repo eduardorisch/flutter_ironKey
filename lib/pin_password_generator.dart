@@ -4,12 +4,12 @@ import 'package:ironkey/password_generator.dart';
 
 class PinPasswordGenerator implements PasswordGenerator{
   @override
-  String generate() {
+  String generate(int length) {
     const numbers = "0123456789";
     final random = Random();
 
     return List.generate(
-        12,
+        length,
         (_) => numbers[random.nextInt(numbers.length)],
       ).join();
   }
